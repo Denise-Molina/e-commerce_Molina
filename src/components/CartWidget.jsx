@@ -1,9 +1,9 @@
-import { BsFillCartFill } from "react-icons/bs";
+import { BsCart } from "react-icons/bs";
 
 function CartWidget(){
 return(
     <div>
-        <span><button type="button" className="btn__carrito"><BsFillCartFill /></button></span>
+        <button type="button" className="btn__carrito"><BsCart /></button>
     </div>
 );
 }
