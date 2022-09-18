@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+//import ItemCount from  "./ItemCount"
 
 function products(props) {
   return (
@@ -11,7 +12,7 @@ function products(props) {
           title="Croissant de Almendras"
           detail="Croissant clásica francesa, rellena de pasta del Almendras."
           img="https://s3.amazonaws.com/storage.wobiz.com/156/156475/images/Large/1617223644_8f95399b5b1407fad2681f0f7a155af8.156475.jpeg"
-        />
+       />
         <Card
           price={540}
           title="Pañuelitos de pastelera"
