@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 //import ItemCount from  "./ItemCount"
+import getItems from "../data";
 
-function products(props) {
+function ItemListContainer() {
+  let [data, setData] = useState([]);
+
+  useEffect(() => {
+    getItems().then((respuestaDatos) => setData(respuestaDatos));
+  }, []);
+
   return (
     <div>
-      <h1>{props.greeting}</h1>
       <div className="main container">
+        {data.map((item) => {
+          return (
+            <Card>
+              key={item.id}
+              price={item.price}
+              title={item.title}
+              img={item.img}
+              detail={item.detail}
+            </Card>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export default ItemListContainer;
+
+//products
+//props
+//useState
+//function products(props)
+//<h1>{props.greeting}</h1>
+// console.log(item);
+/*
         <Card
           price={590}
           title="Croissant de Almendras"
@@ -25,9 +56,6 @@ function products(props) {
           detail="Torta de chocolate amargo relleno de ganache de chocolate"
           img="https://s3.amazonaws.com/storage.wobiz.com/156/156475/images/Large/1617226252_4220a031894d636a52c8025a4a501674.156475.jpeg"
         />
-      </div>
-    </div>
-  );
-}
 
-export default products;
+
+*/
