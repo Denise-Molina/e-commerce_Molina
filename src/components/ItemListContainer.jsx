@@ -15,13 +15,12 @@ function ItemListContainer() {
       <div className="main container">
         {data.map((item) => {
           return (
-            <Card>
-              key={item.id}
+            <Card
               price={item.price}
               title={item.title}
               img={item.img}
-              detail={item.detail}
-            </Card>
+              detail={item.detail}>
+              </Card>
           );
         })}
       </div>

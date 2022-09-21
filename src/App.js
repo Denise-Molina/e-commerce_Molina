@@ -9,9 +9,8 @@ function App() {
       <header className="App-header">
         <Navbar />
       </header>
-
-      <FlexWrapper>
         <ItemListContainer /*greeting="Nuestros productos"*/ />
+       <FlexWrapper> 
       </FlexWrapper>
     </div>
   );
