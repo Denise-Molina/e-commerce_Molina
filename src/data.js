@@ -73,3 +73,12 @@ export default function getItems(){
     });
 }
 
+
+export function getSingleItems(){
+    return new Promise ((resolve, reject) =>{
+        setTimeout(()=>{
+            resolve (data[2]);
+        },1500);
+    });
+}
+

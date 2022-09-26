@@ -1,7 +1,8 @@
 import "./App.css";
 import Navbar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
+//import ItemListContainer from "./components/ItemListContainer";
 import FlexWrapper from "./components/FlexWrapper";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <header className="App-header">
         <Navbar />
       </header>
-        <ItemListContainer /*greeting="Nuestros productos"*/ />
+      {/* <ItemListContainer />*/ }
+       <ItemDetailContainer />
        <FlexWrapper> 
       </FlexWrapper>
     </div>
