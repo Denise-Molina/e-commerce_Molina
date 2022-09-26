@@ -10,8 +10,9 @@ function App() {
       <header className="App-header">
         <Navbar />
       </header>
-      {/* <ItemListContainer />*/ }
-       <ItemDetailContainer />
+      {/* <ItemListContainer /> */}
+      {<ItemDetailContainer />}
+       
        <FlexWrapper> 
       </FlexWrapper>
     </div>

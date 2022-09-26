@@ -1,23 +1,20 @@
-import getSingleItems from "../data";
+import  {getSingleItems}   from "../data";
 import React, { useEffect, useState } from "react";
-import Item from "./Item";
+import ItemDetail from "./ItemDetail";
 
 
 function ItemDetailContainer() {
   let [data, setData] = useState({});
+  const itemId = 2
   useEffect(() => {
-    getSingleItems().then((nuevosDatos) => setData(nuevosDatos));
+    getSingleItems(itemId).then((nuevosDatos) => setData(nuevosDatos));
   }, []);
 
   return (
     <div>
       <div className="main container"></div>
       <div>
-        <Item>
-          <h1>{data.title}</h1>
-          <h2>{data.price}</h2>
-          <p>{data.detail}</p>
-        </Item>
+<ItemDetail {...data} />
       </div>
     </div>
   );
