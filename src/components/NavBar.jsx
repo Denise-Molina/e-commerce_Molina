@@ -3,19 +3,24 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logoweb from "../img/logoweb.jpg";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-   <Navbar bg="light" variant="light">
+    <Navbar bg="light" variant="light">
       <Container>
         <img src={logoweb} className="header_logo" alt="logo" />
-        <Navbar.Brand href="#Inicio">
-          Sasha Pasteles
-        </Navbar.Brand>
+        <Navbar.Brand href="#Inicio">Sasha Pasteles</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#Inicio">Inicio</Nav.Link>
-          <Nav.Link href="#productos">Productos</Nav.Link>
-          <Nav.Link href="#contacto">Contacto</Nav.Link>
+          <Link className="enlace" to="#Inicio">
+            Inicio
+          </Link>
+          <Link className="enlace" to="#productos">
+            Productos
+          </Link>
+          <Link className="enlace" to="#contacto">
+            Contacto
+          </Link>
         </Nav>
         <CartWidget />
       </Container>

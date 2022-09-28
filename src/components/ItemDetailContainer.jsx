@@ -1,11 +1,11 @@
-import  {getSingleItems}   from "../data";
+import { getSingleItems } from "../data";
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 
-
 function ItemDetailContainer() {
   let [data, setData] = useState({});
-  const itemId = 2
+
+  const itemId = 3 ;
   useEffect(() => {
     getSingleItems(itemId).then((nuevosDatos) => setData(nuevosDatos));
   }, []);
@@ -14,7 +14,7 @@ function ItemDetailContainer() {
     <div>
       <div className="main container"></div>
       <div>
-<ItemDetail {...data} />
+        <ItemDetail {...data} />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import ItemCount from "../components/ItemCount";
+import {Link} from "react-router-dom";
 
 
 function Item(props) {
@@ -11,21 +12,22 @@ function Item(props) {
   };
 
   return (
-
     <div className="card">
-    <div className="card-img">
-      <img src={img} alt="card img"></img>
-    </div>
-    <div className="card-detail">
-      <h3>{title}</h3>
-      <p>{detail}</p>
-      <h4>$ {price}</h4>
-    </div>
+      <div className="card-img">
+        <img src={img} alt="card img"></img>
+      </div>
+      <div className="card-detail">
+        <h3>{title}</h3>
+        <p>{detail}</p>
+        <h4>$ {price}</h4>
+      </div>
 
-      <Button variant="outline-dark">Comprar</Button>
+      <Link to="/detalleProducto">
+      <Button variant="outline-info" >Ver detalle del producto</Button>
+      </Link>
       <ItemCount initial={1} stock={10} onAdd={onAdd} />
+      <Button variant="outline-dark">Comprar</Button>
     </div>
-
   );
 }
 

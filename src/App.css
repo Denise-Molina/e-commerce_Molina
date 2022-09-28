@@ -5,6 +5,14 @@
   margin-right: 20px;
 }
 
+.enlace{
+  justify-content: center;
+  text-decoration: none;
+  margin-right: 20px;
+  margin-left: 10px;
+  color: rgb(100, 99, 99);
+}
+
 /*cards*/
 
 .counter{
@@ -43,6 +51,7 @@
   transition: all 0.20s ease-in;
   cursor: pointer;
   display: inline-flex;
+  justify-content: center;
 }
 
 .card:hover {

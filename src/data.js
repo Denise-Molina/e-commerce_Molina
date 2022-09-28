@@ -69,7 +69,7 @@ export default function getItems(){
     return new Promise ((resolve, reject) =>{
         setTimeout(()=>{
             resolve (data);
-        },2000);
+        },1000);
     });
 }
 
@@ -78,7 +78,7 @@ export function getSingleItems(id){
     return new Promise ((resolve, reject) =>{
         setTimeout(()=>{
             resolve (data.find(item => item.id === id));
-        },1500);
+        },1000);
     });
 }
 
