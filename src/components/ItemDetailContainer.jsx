@@ -1,14 +1,16 @@
 import { getSingleItems } from "../data";
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import {useParams} from 'react-router-dom';
 
 function ItemDetailContainer() {
   let [data, setData] = useState({});
 
-  const itemId = 3 ;
+  const {itemId}= useParams() ;
   useEffect(() => {
     getSingleItems(itemId).then((nuevosDatos) => setData(nuevosDatos));
-  }, []);
+  }, [itemId]);
+
 
   return (
     <div>

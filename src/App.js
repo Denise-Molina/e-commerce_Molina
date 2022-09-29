@@ -13,8 +13,10 @@ function App() {
           <Navbar />
         </header>
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/detalleProducto" element={<ItemDetailContainer />} />
+          <Route path="/Inicio/:" element={<ItemListContainer />} />
+          <Route path="/detalle/:itemId"  element={<ItemDetailContainer />} />
+          <Route path="/PedidosConAnticipacion/:" element={ <h1> Pedidos con anticipación</h1>}/>
+          <Route path="/Contacto/:" element={ <h1> Contacto</h1>}/>
           <Route path="*" element={<h1>Error 404: Te perdiste</h1>} />
         </Routes>
         <FlexWrapper></FlexWrapper>

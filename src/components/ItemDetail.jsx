@@ -10,7 +10,7 @@ const ItemDetail = ({ title, price, img, detail }) => {
   return (
     <div className="card">
       <div className="card-img">
-        <div></div>
+        <div>  </div>
       </div>
       <div className="card-detail">
         <h3> {title} </h3>

@@ -17,6 +17,8 @@ function ItemListContainer() {
         {data.map((item) => {
           return (
             <Item
+            key={item.id}
+            id={item.id}
               price={item.price}
               title={item.title}
               img={item.img}

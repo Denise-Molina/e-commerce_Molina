@@ -12,13 +12,14 @@ function NavBar() {
         <img src={logoweb} className="header_logo" alt="logo" />
         <Navbar.Brand href="#Inicio">Sasha Pasteles</Navbar.Brand>
         <Nav className="me-auto">
-          <Link className="enlace" to="#Inicio">
+
+          <Link className="enlace" to="/Inicio/:">
             Inicio
           </Link>
-          <Link className="enlace" to="#productos">
-            Productos
+          <Link className="enlace" to="/PedidosConAnticipacion/:">
+            Pedidos Con Anticipación
           </Link>
-          <Link className="enlace" to="#contacto">
+          <Link className="enlace" to="/Contacto/:">
             Contacto
           </Link>
         </Nav>
