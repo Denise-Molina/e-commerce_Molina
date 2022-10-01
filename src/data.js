@@ -1,6 +1,7 @@
 const data = [
   {
     id: "1",
+    category: "facturas",
     title: "Croissant de Almendras",
     price: 590,
     detail: "Croissant clásica francesa, rellena de pasta del Almendras.",
@@ -8,6 +9,7 @@ const data = [
   },
   {
     id: "2",
+    category: "facturas",
     title: "Pañuelitos de pastelera",
     price: 540,
     detail: "Pañuelitos de hojaldre, rellenos de pastelera y fruta.",
@@ -15,6 +17,7 @@ const data = [
   },
   {
     id: "3",
+    category: "tortas",
     title: "Torta Matilda",
     price: 990,
     detail: "Torta de chocolate amargo relleno de ganache de chocolate",
@@ -22,13 +25,16 @@ const data = [
   },
   {
     id: "4",
+    category: "tortas",
     title: "Carrot Cake",
     price: 700,
-    detail: "Húmeda, dulce en su medida y con el crocante de las nueces, la carrot cake es una gran opción para cualquier momento del día. ",
+    detail:
+      "Húmeda, dulce en su medida y con el crocante de las nueces, la carrot cake es una gran opción para cualquier momento del día. ",
     img: "https://s3.amazonaws.com/storage.wobiz.com/156/156475/images/Original/1619115830_6f25f483b664471da1dd83f5469d551d.156475.png",
   },
   {
     id: "5",
+    category: "tortas",
     title: "Brownie con merengue",
     price: 750,
     detail: "Brownie con Dulce de Leche, Merengue y Chocolate",
@@ -36,6 +42,7 @@ const data = [
   },
   {
     id: "6",
+    category: "tortas",
     title: "Budin de limón",
     price: 490,
     detail: "Budin de limón con glaceado",
@@ -43,6 +50,7 @@ const data = [
   },
   {
     id: "7",
+    category: "alfajores",
     title: "Alfajor sablee de nuez",
     price: 540,
     detail: "Masa sablee de Nuez, dulce de leche y nuez",
@@ -50,6 +58,7 @@ const data = [
   },
   {
     id: "8",
+    category: "alfajores",
     title: "Alfajor sablee de almendras",
     price: 450,
     detail: "Tapitas de sablé de Almendras, rellenas de dulce de leche",
@@ -57,28 +66,40 @@ const data = [
   },
   {
     id: "9",
+    category: "alfajores",
     title: "Alfajor de maicena",
     price: 540,
     detail: "Masa de maicena, rellena de dulce de leche",
-    img: "https://s3.amazonaws.com/storage.wobiz.com/156/156475/images/Original/1630333858_ceb8982a091ba4f9b3385c49d50b2494.156475.jpeg"
-
-  }
+    img: "https://s3.amazonaws.com/storage.wobiz.com/156/156475/images/Original/1630333858_ceb8982a091ba4f9b3385c49d50b2494.156475.jpeg",
+  },
 ];
 
-export default function getItems(){
-    return new Promise ((resolve, reject) =>{
-        setTimeout(()=>{
-            resolve (data);
-        },1000);
-    });
+export default function getItems() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(data);
+    }, 1000);
+  });
 }
 
-
-export function getSingleItems(id){
-    return new Promise ((resolve, reject) =>{
-        setTimeout(()=>{
-            resolve (data.find(item => item.id === id));
-        },1000);
-    });
+export function getSingleItems(id) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(data.find((item) => item.id === id));
+    }, 1000);
+  });
 }
 
+//category
+
+export function getItemsByCategory(cat) {
+  return new Promise((resolve, reject) => {
+    let itemFind = data.filter((item) => {
+      return item.category === cat;
+    });
+    setTimeout(() => {
+      if (itemFind) resolve(itemFind);
+      else reject(new Error("item no encontrado"));
+    }, 1500);
+  });
+}

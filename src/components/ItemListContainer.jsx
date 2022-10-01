@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
-//import ItemCount from  "./ItemCount"
-import getItems from "../data";
-
+//import ItemCount from  "./ItemCount";
+import getItems  from "../data";
+//import { useParams } from "react-router-dom";
+//import {getItemsByCategory} from "../data";
 
 function ItemListContainer() {
   let [data, setData] = useState([]);
+  //const {cat} = useParams();
 
   useEffect(() => {
-    getItems().then((respuestaDatos) => setData(respuestaDatos));
+      getItems().then((respuestaDatos) => setData(respuestaDatos));
   }, []);
 
   return (
@@ -17,8 +19,8 @@ function ItemListContainer() {
         {data.map((item) => {
           return (
             <Item
-            key={item.id}
-            id={item.id}
+              key={item.id}
+              id={item.id}
               price={item.price}
               title={item.title}
               img={item.img}

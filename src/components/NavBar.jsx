@@ -13,14 +13,17 @@ function NavBar() {
         <Navbar.Brand href="#Inicio">Sasha Pasteles</Navbar.Brand>
         <Nav className="me-auto">
 
-          <Link className="enlace" to="/Inicio/:">
+          <Link className="enlace" to="/">
             Inicio
           </Link>
-          <Link className="enlace" to="/PedidosConAnticipacion/:">
-            Pedidos Con Anticipación
+          <Link className="enlace" to="/categoria/:TortasId">
+            Tortas
           </Link>
-          <Link className="enlace" to="/Contacto/:">
-            Contacto
+          <Link className="enlace" to="/categoria/:AlfajoresId">
+            Alfajores
+          </Link>
+          <Link className="enlace" to="/categoria/:FacturasId">
+            Facturas
           </Link>
         </Nav>
         <CartWidget />
