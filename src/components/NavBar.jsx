@@ -14,15 +14,15 @@ function NavBar() {
         <Nav className="me-auto">
 
           <Link className="enlace" to="/">
-            Inicio
+            Todos los productos
           </Link>
-          <Link className="enlace" to="/categoria/:TortasId">
+          <Link className="enlace" to="/categoria/tortas">
             Tortas
           </Link>
-          <Link className="enlace" to="/categoria/:AlfajoresId">
+          <Link className="enlace" to="/categoria/alfajores">
             Alfajores
           </Link>
-          <Link className="enlace" to="/categoria/:FacturasId">
+          <Link className="enlace" to="/categoria/facturas">
             Facturas
           </Link>
         </Nav>
