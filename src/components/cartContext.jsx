@@ -2,7 +2,7 @@ import React, { useState, createContext } from "react";
 
 const cartContext = createContext();
 
-export default function cartContextProvider({ children }) {
+export default function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   function addItem(data, price) {
@@ -13,7 +13,7 @@ export default function cartContextProvider({ children }) {
   }
 
   /*
-    function addItem(data, price) {
+    function addItem(item, price) {
         if (isInCart(item.id)) {
           let newCart = cart.map((itemMapeo) => {
             if (itemMapeo.id === item.id) {
@@ -24,7 +24,7 @@ export default function cartContextProvider({ children }) {
     
           setCart(newCart);
         } else {
-          let newCart = cart.map((data) => data);
+          let newCart = cart.map((item) => item);
           newCart.push({ ...item, count: count });
           setCart(newCart);
         }
