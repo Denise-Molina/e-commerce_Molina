@@ -5,45 +5,35 @@ const cartContext = createContext();
 export default function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  function addItem(data, price) {
-    let newCart = cart.map((data) => data);
-    newCart.push({ data, price });
-    setCart(newCart);
-    console.log(newCart);
+  function addItem(data, count) {
+    const newItem = {
+      ...data,
+      count,
+    };
+
+    if (isInCart(newItem.id)) {
+      const findProduct = cart.find((product) => product.id === newItem.id);
+      const productIndex = cart.indexOf(findProduct);
+      const copyArray = [...cart];
+      copyArray[productIndex].count += count;
+      setCart(copyArray);
+    } else {
+      setCart([...cart, newItem]);
+    }
   }
 
-  /*
-    function addItem(item, price) {
-        if (isInCart(item.id)) {
-          let newCart = cart.map((itemMapeo) => {
-            if (itemMapeo.id === item.id) {
-              itemMapeo.price += price;
-              return itemMapeo;
-            } else return itemMapeo;
-          });
-    
-          setCart(newCart);
-        } else {
-          let newCart = cart.map((item) => item);
-          newCart.push({ ...item, count: count });
-          setCart(newCart);
-        }
-      }
+  function isInCart(id) {
+    let found = cart.some((item) => item.id === id);
+    return found;
+  }
 
-      function getTotalItemsInCart() {
-        let total = 5;
-        cart.forEach((item) => 0);
-        return total;
-      }
-    
-      function isInCart(id) {
-        let found = cart.some((item) => item.id === id);
-        return found;
-      }
-  */
+  function getTotalItemsInCart() {
+    return cart.reduce((acc, item) => (acc += item.count), 0);
+  }
 
   return (
-    <cartContext.Provider value={{ cart, addItem }}>
+    <cartContext.Provider
+      value={{ cart, addItem, isInCart, getTotalItemsInCart }}>
       {children}
     </cartContext.Provider>
   );

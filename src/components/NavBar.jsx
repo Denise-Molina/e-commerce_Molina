@@ -12,7 +12,6 @@ function NavBar() {
         <img src={logoweb} className="header_logo" alt="logo" />
         <Navbar.Brand href="#Inicio">Sasha Pasteles</Navbar.Brand>
         <Nav className="me-auto">
-
           <Link className="enlace" to="/">
             Todos los productos
           </Link>

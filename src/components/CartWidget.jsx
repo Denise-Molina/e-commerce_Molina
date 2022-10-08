@@ -3,14 +3,14 @@ import React, { useContext } from "react";
 import { cartContext } from "./cartContext";
 
 function CartWidget() {
-  const { cart } = useContext(cartContext);
+  const { getTotalItemsInCart } = useContext(cartContext);
 
   return (
     <div>
       <button type="button" className="btn__carrito">
         <BsCart />
       </button>
-      <span> { cart.length} </span>
+      <span> {getTotalItemsInCart()} </span>
     </div>
   );
 }
