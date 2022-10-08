@@ -1,14 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import ItemCount from "../components/ItemCount";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import {cartContext} from "./cartContext"
 
 const ItemDetail = ({ title, price, img, detail }) => {
   //para aparecer el contador se debe cambiar el true por el false
-  let estadoCart = true;
+  let estadoCart = false;
 
-  const onAddToCart = (quantity) => {
-    alert(`agregaste al carrito ${quantity} productos!!`);
+const {addItem} = useContext(cartContext)
+
+  const onAddToCart = (count) => {
+    addItem(title, price, img, detail, count);
+    /*alert(`agregaste al carrito ${quantity} productos!!`);*/
   };
 
   return (
