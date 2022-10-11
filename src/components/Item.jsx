@@ -1,15 +1,15 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import ItemCount from "../components/ItemCount";
+//import ItemCount from "../components/ItemCount";
 import { Link } from "react-router-dom";
 
 function Item(props) {
   let { id, price, title, img, detail } = props;
-
+/*
   const onAdd = (quantity) => {
     console.log(quantity);
   };
-
+*/
   return (
     <div className="card">
       <div className="card-img">
@@ -22,10 +22,13 @@ function Item(props) {
       </div>
 
       <Link to={`/detalle/${id}`}>
-        <Button variant="outline-info">Ver detalle del producto</Button>
+        <Button className="btninicio" variant="outline-dark">Ver detalle del producto</Button>
       </Link>
-      <ItemCount initial={1} stock={10} onAdd={onAdd} />
-      <Button variant="outline-dark">Comprar</Button>
+
+      {/*     
+       <ItemCount initial={1} stock={10} onAdd={onAdd} />
+      <Button variant="outline-dark">Comprar</Button>  
+      */}
     </div>
   );
 }
