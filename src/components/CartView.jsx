@@ -4,13 +4,11 @@ import { cartContext } from "./cartContext";
 
 function CartView() {
   const context = useContext(cartContext);
-  const { cart } = context;
+  const { cart, getTotal } = context;
 
-  let carritovacio = false;
+const total = getTotal()
+console.log(cart)
 
-  if (carritovacio) {
-    return <div>Tu carrito está vacio...</div>;
-  }
 
   return (
     <div>
@@ -19,9 +17,9 @@ function CartView() {
           <h3> Producto: {item.title}</h3>
           <p> Precio: {item.price}</p>
           <p> Cantidad: {item.count}</p>
-          <strong>total:{item.price * item.count}</strong>
         </div>
       ))}
+      <strong> Total:{total} </strong>
     </div>
   );
 }

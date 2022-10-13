@@ -5,20 +5,9 @@ const cartContext = createContext();
 export default function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  function addItem(data, count) {
-    const newItem = {
-      ...data,
-      count,
-    };
-
-    if (isInCart(newItem.id)) {
-      const findProduct = cart.find((product) => product.id === newItem.id);
-      const productIndex = cart.indexOf(findProduct);
-      const copyArray = [...cart];
-      copyArray[productIndex].count += count;
-      setCart(copyArray);
-    } else {
-      setCart([...cart, newItem]);
+  function addItem(producto) {
+    if (!isInCart(producto.id)) {
+      setCart([...cart, producto]);
     }
   }
 
@@ -31,9 +20,18 @@ export default function CartContextProvider({ children }) {
     return cart.reduce((acc, item) => (acc += item.count), 0);
   }
 
+  const getTotal = () => {
+    let total = 0;
+    cart.forEach((prod) => {
+      total += prod.count * prod.price;
+    });
+
+    return total;
+  };
+
   return (
     <cartContext.Provider
-      value={{ cart, addItem, isInCart, getTotalItemsInCart }}>
+      value={{ cart, addItem, isInCart, getTotalItemsInCart, getTotal }}>
       {children}
     </cartContext.Provider>
   );

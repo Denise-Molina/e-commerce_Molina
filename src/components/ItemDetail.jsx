@@ -4,16 +4,15 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { cartContext } from "./cartContext";
 
-const ItemDetail = ({ title, price, img, detail }) => {
+const ItemDetail = ({id, title, price, img, detail }) => {
   //para aparecer el contador se debe cambiar el true por el false
 
-  const [estadoCart, setEstadoCart] = useState(false);
+  const [estadoCart, setEstadoCart] = useState();
   const { addItem } = useContext(cartContext);
 
   const onAddToCart = (count) => {
-    addItem({ title, price, img, detail }, count);
-    setEstadoCart(true);
-    alert(`Se agrego al carrito ${count} productos!!`);
+    addItem({ id, title, price, img, detail, count });
+    setEstadoCart(count);
     console.log(`Se agrego al carrito ${count} productos!!`);
   };
 
@@ -27,12 +26,12 @@ const ItemDetail = ({ title, price, img, detail }) => {
         <p> {detail} </p>
         <h4> $ {price} </h4>
 
-        {estadoCart === false ? (
-          <ItemCount initial={1} stock={10} onAddToCart={onAddToCart} />
-        ) : (
+        {estadoCart ? (
           <Link to="/Cart/">
             <Button variant="outline-dark">Finalizar Compra</Button>
           </Link>
+        ) : (
+          <ItemCount initial={1} stock={10} onAddToCart={onAddToCart} />
         )}
       </div>
     </div>
