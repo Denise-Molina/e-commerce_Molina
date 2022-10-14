@@ -7,7 +7,9 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import CartContextProvider from "./components/cartContext";
 import CartView from "./components/CartView";
 
+
 function App() {
+
   return (
     <CartContextProvider>
       <div className="App">
