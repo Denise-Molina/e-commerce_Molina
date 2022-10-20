@@ -6,8 +6,9 @@ import {
   getDocs,
   doc,
   getDoc,
-  query, 
-  where
+  query,
+  where,
+  addDoc,
 } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -41,18 +42,27 @@ export async function getSingleItems(idParams) {
   return { ...docSnapshot.data(), id: docSnapshot.id };
 }
 
-export async function getItemsByCategory(catParams){
-    const collectionRef = collection(firestore, "tortas");
-    const queryCategory = query(collectionRef, where("category", "==", catParams));
+export async function getItemsByCategory(catParams) {
+  const collectionRef = collection(firestore, "tortas");
+  const queryCategory = query(
+    collectionRef,
+    where("category", "==", catParams)
+  );
 
-    const respuesta = await getDocs(queryCategory);
+  const respuesta = await getDocs(queryCategory);
+
+  let dataDocs = respuesta.docs.map((documento) => {
+    let docFormateado = { ...documento.data(), id: documento.id };
+    return docFormateado;
+  });
+  return dataDocs;
+}
 
 
-    let dataDocs = respuesta.docs.map((documento) => {
-        let docFormateado = { ...documento.data(), id: documento.id };
-        return docFormateado;
-      });
-      return dataDocs;
+export async function createBuyOrder(orderData) {
+  const collectionRef = collection(firestore, "orders");
+  let respuesta = await addDoc(collectionRef, orderData);
+  console.log(respuesta.id);
 }
 
 export default firestore;

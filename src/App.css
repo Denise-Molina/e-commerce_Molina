@@ -84,3 +84,31 @@ small {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+/* carrito*/
+
+.cartList{
+  border-spacing: 0;
+  width: 95%;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.cartList_head{
+  background-color: #da1674;
+  margin: 8px auto;
+}
+
+.cartList_row{
+  line-height: 46px;
+}
+
+.btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btnT{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

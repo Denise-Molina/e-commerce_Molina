@@ -1,7 +1,7 @@
-import Item from './Item'
+import Item from "./Item";
 
-function ItemList (){
-<Item />
+function ItemList() {
+  <Item />;
 }
 
 export default ItemList;

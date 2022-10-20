@@ -24,6 +24,9 @@ function NavBar() {
           <Link className="enlace" to="/categoria/facturas">
             Facturas
           </Link>
+          <Link className="enlace" to="/categoria/anticipacion">
+            Pedidos con anticipación
+          </Link>
         </Nav>
         <CartWidget />
       </Container>

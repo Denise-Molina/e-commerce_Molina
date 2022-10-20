@@ -29,9 +29,27 @@ export default function CartContextProvider({ children }) {
     return total;
   };
 
+  //Elimina un item especifico del cart
+  const removeItem = (id) => {
+    return setCart(cart.filter((item) => item.id !== id));
+  };
+
+  //Elimina todos los items del cart
+  const emptyCart = () => {
+    return setCart([]);
+  };
+
   return (
     <cartContext.Provider
-      value={{ cart, addItem, isInCart, getTotalItemsInCart, getTotal }}>
+      value={{
+        cart,
+        addItem,
+        isInCart,
+        getTotalItemsInCart,
+        getTotal,
+        removeItem,
+        emptyCart,
+      }}>
       {children}
     </cartContext.Provider>
   );

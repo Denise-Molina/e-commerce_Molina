@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Item(props) {
   let { id, price, title, img, detail } = props;
-/*
+  /*
   const onAdd = (quantity) => {
     console.log(quantity);
   };
@@ -22,7 +22,9 @@ function Item(props) {
       </div>
 
       <Link to={`/detalle/${id}`}>
-        <Button className="btninicio" variant="outline-dark">Ver detalle del producto</Button>
+        <Button className="btninicio" variant="outline-dark">
+          Ver detalle del producto
+        </Button>
       </Link>
 
       {/*     

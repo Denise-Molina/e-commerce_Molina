@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { cartContext } from "./cartContext";
 
-const ItemDetail = ({id, title, price, img, detail }) => {
+const ItemDetail = ({ id, title, price, img, detail }) => {
   //para aparecer el contador se debe cambiar el true por el false
 
   const [estadoCart, setEstadoCart] = useState();
@@ -13,7 +13,6 @@ const ItemDetail = ({id, title, price, img, detail }) => {
   const onAddToCart = (count) => {
     addItem({ id, title, price, img, detail, count });
     setEstadoCart(count);
-    console.log(`Se agrego al carrito ${count} productos!!`);
   };
 
   return (
@@ -28,11 +27,16 @@ const ItemDetail = ({id, title, price, img, detail }) => {
 
         {estadoCart ? (
           <Link to="/Cart/">
-            <Button variant="outline-dark">Finalizar Compra</Button>
+            <Button variant="outline-dark">Ver detalle de compra</Button>
           </Link>
         ) : (
           <ItemCount initial={1} stock={10} onAddToCart={onAddToCart} />
         )}
+      </div>
+      <div>
+        <Link to="/">
+          <Button>Seguir comprando</Button>
+        </Link>
       </div>
     </div>
   );
