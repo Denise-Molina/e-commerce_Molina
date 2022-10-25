@@ -1,10 +1,11 @@
 import React from "react";
 import { useContext } from "react";
 import { cartContext } from "./cartContext";
-import { createBuyOrder } from "../firestore";
+//import { createBuyOrder } from "../firestore";
 import Button from "react-bootstrap/Button";
-import Swal from "sweetalert2";
+//import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import CheckoutForm from "./CheckoutForm";
 
 function CartView() {
   const context = useContext(cartContext);
@@ -12,7 +13,7 @@ function CartView() {
 
   const total = getTotal();
   console.log(cart);
-
+/*
   function handleCheckout() {
     const orderData = {
       buyer: {
@@ -28,7 +29,7 @@ function CartView() {
       emptyCart();
     });
   }
-
+*/
   return (
     <>
       <div>
@@ -67,9 +68,10 @@ function CartView() {
           <table>
             <tr className="cartList_row">
               <td className="btn">
-                <Button variant="success" onClick={handleCheckout}>
+                {  /*              <Button variant="success" onClick={handleCheckout}>
                   Finalizar Compra
-                </Button>
+          </Button>*/}
+
               </td>
               <td className="btn">
                 <Button variant="danger" onClick={emptyCart}>
@@ -86,7 +88,9 @@ function CartView() {
               </td>
             </tr>
           </table>
+          
         </div>
+        <CheckoutForm />
       </div>
     </>
   );
