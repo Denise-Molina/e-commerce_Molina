@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { cartContext } from "./cartContext";
 
 const ItemDetail = ({ id, title, price, img, detail }) => {
-  //para aparecer el contador se debe cambiar el true por el false
 
   const [estadoCart, setEstadoCart] = useState();
   const { addItem } = useContext(cartContext);

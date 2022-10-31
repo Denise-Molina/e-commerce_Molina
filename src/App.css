@@ -5,7 +5,7 @@
   margin-right: 20px;
 }
 
-.enlace{
+.enlace {
   justify-content: center;
   text-decoration: none;
   margin-right: 20px;
@@ -15,7 +15,7 @@
 
 /*cards*/
 
-.counter{
+.counter {
   align-items: center;
   justify-content: center;
 }
@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: center;
   object-fit: cover;
-  display:inline-flex;
+  display: inline-flex;
 }
 
 .card-img img {
@@ -55,7 +55,7 @@
   cursor: pointer;
   display: inline-flex;
   text-align: center;
-  justify-content:justify;
+  justify-content: justify;
 }
 
 .card:hover {
@@ -80,35 +80,134 @@ small {
   text-align: center;
 }
 
-.btnAgregarCarrito{
+.btnAgregarCarrito {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 /* carrito*/
 
-.cartList{
+.title {
+  justify-content: center;
+  text-align: center;
+}
+
+.cartList {
   border-spacing: 0;
   width: 95%;
   margin: 15px auto;
   text-align: center;
 }
 
-.cartList_head{
-  background-color: #da1674;
+.cartList_head {
+  background-color: #e94092d8;
   margin: 8px auto;
 }
 
-.cartList_row{
+.cartList_row {
   line-height: 46px;
 }
 
-.btn{
+.btn {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.btnT{
+.btnT {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+/* formulario */
+
+form {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  background-color: rgb(248, 202, 227);
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 7px;
+  
+
+}
+
+.formulario {
+  text-align: center;
+  font-weight: bold;
+  justify-content: center;
+  margin: 20px;
+
+}
+
+.input {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  margin: 10px;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+input,
+textarea {
+  resize: none;
+  width: 100%;
+  margin-bottom: 25px;
+  max-width: 358px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 35px;
+  padding: 5px 20px;
+
+  color:#555;
+
+}
+
+
+.form-item {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+label{
+  color: black;
+}
+
+span{
+  color:rgb(0, 0, 0);
+  font-size: .8rem;
+  vertical-align: top;
+  font-weight: 500;
+}
+
+.btnform{
+  padding: 20px;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* checkout */
+
+.checkout{
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-items{
+  text-align: center;
+}
+
+.btnseguir{
+  padding: 20px;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

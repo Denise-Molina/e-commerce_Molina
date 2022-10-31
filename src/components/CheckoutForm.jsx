@@ -14,7 +14,7 @@ function CheckoutForm() {
 
   const navigate = useNavigate();
   const context = useContext(cartContext);
-  const { cart, getTotal } = context;
+  const { cart, getTotal, emptyCart } = context;
 
   function handleCheckout(event) {
     event.preventDefault();
@@ -24,8 +24,9 @@ function CheckoutForm() {
       date: new Date(),
       total: getTotal(),
     };
-    createBuyOrder(orderData).then((orderid) => {
-      navigate(`/checkout/${orderid}`);
+    createBuyOrder(orderData).then((orderID) => {
+      navigate(`/checkout/${orderID}`);
+      emptyCart();
     });
   }
 
@@ -40,43 +41,66 @@ function CheckoutForm() {
 
   return (
     <div className="form-container">
-      <form onSubmit={handleCheckout}>
-        <div className="form-item">
-            <label htmlFor="name">Nombre</label>
-            <input value={dataForm.name}
-            onChange={inputChangeHandler} 
-            name="name" 
-            type="text"
-            placeholder="Nombre"
-            required />
-        </div>
+      <h4 className="title">
+        Complete los siguientes datos para finalizar su compra
+      </h4>
+      <form  className="form" onSubmit={handleCheckout}>
+        <div className="formulario">
+          <div className="form-item">
+            <label htmlFor="name">
+              Nombre/s <span>*</span>
+            </label>
+            <input className="input"
+              value={dataForm.name}
+              name="name"
+              type="text"
+              onChange={inputChangeHandler}
+              required
+            />
+          </div>
 
-        <div className="form-item">
-          <label htmlFor="telefono">Telefono</label>
-          <input
-            value={dataForm.phone}
-            onChange={inputChangeHandler}
-            name="phone"
-            type="text"
-            placeholder="Telefono"
-            required
-          />
-        </div>
+          <div className="form-item">
+            <label htmlFor="surname">
+              Apellido/s <span>*</span>
+            </label>
+            <input className="input"
+              value={dataForm.surname}
+              name="surname"
+              type="text"
+              onChange={inputChangeHandler}
+              required
+            />
+          </div>
 
-        <div className="form-item">
-          <label htmlFor="email">Email</label>
-          <input
-            value={dataForm.email}
-            onChange={inputChangeHandler}
-            name="email"
-            type="text"
-            placeholder="Correo"
-            required
-          />
-        </div>
-        <Button type="submit" variant="success" onClick={handleCheckout}>
-                  Finalizar Compra
+          <div className="form-item">
+            <label htmlFor="telefono">
+              Teléfono <span>*</span>
+            </label>
+            <input className="input"
+              value={dataForm.phone}
+              name="phone"
+              type="text"
+              onChange={inputChangeHandler}
+              required
+            />
+          </div>
+
+          <div className="form-item">
+            <label htmlFor="email">
+              Email <span>*</span>
+            </label>
+            <input className="input"
+              value={dataForm.email}
+              name="email"
+              type="text"
+              onChange={inputChangeHandler}
+              required
+            />
+          </div>
+          <Button className="btnform" type="submit" variant="outline-dark" onClick={handleCheckout}>
+            Finalizar Compra
           </Button>
+        </div>
       </form>
     </div>
   );
