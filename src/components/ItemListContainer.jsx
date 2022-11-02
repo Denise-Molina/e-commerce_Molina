@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
-//import ItemCount from  "./ItemCount";
 import { getItems } from "../firestore";
 import { useParams } from "react-router-dom";
 import { getItemsByCategory } from "../firestore";
@@ -8,12 +7,7 @@ import { getItemsByCategory } from "../firestore";
 function ItemListContainer() {
   let [data, setData] = useState([]);
   const { cat } = useParams();
-  /*
-  useEffect(() => {
-      getItems().then((respuestaDatos) => setData(respuestaDatos));
-  }, []);
-*/
-  //codigo de prueba
+
   useEffect(() => {
     if (cat === undefined) {
       getItems().then((respuestaDatos) => setData(respuestaDatos));

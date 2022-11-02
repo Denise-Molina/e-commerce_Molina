@@ -12,10 +12,18 @@ function CartView() {
   const total = getTotal();
   console.log(cart);
 
-  return (
+  return cart.length === 0 ? (
+    <div className="centro">
+      <h2 className="title">Mi carrito</h2>
+      <h4>Tu carrito se encuentra vacio...</h4>
+      <Link to="/">
+        <button className="btn_seguir">Seguir comprando</button>
+      </Link>
+    </div>
+  ) : (
     <>
       <div>
-        <h3 className="title">Mi carrito</h3>
+        <h2 className="title">Mi carrito</h2>
         <table className="cartList">
           <thead className="cartList_head">
             <tr className="cartList_row">
@@ -48,21 +56,23 @@ function CartView() {
         </table>
         <div>
           <table>
-            <tr className="cartList_row">
-              <td className="btn">
-                <Button variant="danger" onClick={emptyCart}>
-                  Vaciar carrito
-                </Button>
-              </td>
-              <td>
-                <Link to="/">
-                  <Button variant="info">Seguir Comprando</Button>
-                </Link>
-              </td>
-              <td className="btnT">
-                <h6> El total de tu compra es de ${total} </h6>
-              </td>
-            </tr>
+            <tbody>
+              <tr className="cartList_row">
+                <td className="btn">
+                  <button className="btn_vaciar" onClick={emptyCart}>
+                    Vaciar carrito
+                  </button>
+                </td>
+                <td>
+                  <Link to="/">
+                    <button className="btn_seguir">Seguir Comprando</button>
+                  </Link>
+                </td>
+                <td className="btnT">
+                  <h6> El total de tu compra es de ${total} </h6>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <CheckoutForm />

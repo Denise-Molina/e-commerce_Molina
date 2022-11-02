@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "./cartContext";
-import Button from "react-bootstrap/Button";
 import { createBuyOrder } from "../firestore";
 
 function CheckoutForm() {
@@ -10,6 +9,7 @@ function CheckoutForm() {
     name: "",
     phone: "",
     email: "",
+    surname: "",
   });
 
   const navigate = useNavigate();
@@ -24,8 +24,8 @@ function CheckoutForm() {
       date: new Date(),
       total: getTotal(),
     };
-    createBuyOrder(orderData).then((orderID) => {
-      navigate(`/checkout/${orderID}`);
+    createBuyOrder(orderData).then((orderid) => {
+      navigate(`/checkout/${orderid}`);
       emptyCart();
     });
   }
@@ -44,13 +44,14 @@ function CheckoutForm() {
       <h4 className="title">
         Complete los siguientes datos para finalizar su compra
       </h4>
-      <form  className="form" onSubmit={handleCheckout}>
+      <form className="form" onSubmit={handleCheckout}>
         <div className="formulario">
           <div className="form-item">
             <label htmlFor="name">
               Nombre/s <span>*</span>
             </label>
-            <input className="input"
+            <input
+              className="input"
               value={dataForm.name}
               name="name"
               type="text"
@@ -63,7 +64,8 @@ function CheckoutForm() {
             <label htmlFor="surname">
               Apellido/s <span>*</span>
             </label>
-            <input className="input"
+            <input
+              className="input"
               value={dataForm.surname}
               name="surname"
               type="text"
@@ -76,10 +78,12 @@ function CheckoutForm() {
             <label htmlFor="telefono">
               Teléfono <span>*</span>
             </label>
-            <input className="input"
+            <input
+              className="input"
               value={dataForm.phone}
               name="phone"
-              type="text"
+              type="number"
+              min={1}
               onChange={inputChangeHandler}
               required
             />
@@ -89,7 +93,8 @@ function CheckoutForm() {
             <label htmlFor="email">
               Email <span>*</span>
             </label>
-            <input className="input"
+            <input
+              className="input"
               value={dataForm.email}
               name="email"
               type="text"
@@ -97,9 +102,13 @@ function CheckoutForm() {
               required
             />
           </div>
-          <Button className="btnform" type="submit" variant="outline-dark" onClick={handleCheckout}>
+          <button
+            className="btn_finalizar"
+            type="submit"
+            variant="outline-dark"
+            onClick={handleCheckout}>
             Finalizar Compra
-          </Button>
+          </button>
         </div>
       </form>
     </div>

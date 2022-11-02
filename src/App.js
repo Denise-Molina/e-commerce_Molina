@@ -21,7 +21,7 @@ function App() {
             <Route path="/categoria/:cat" element={<ItemListContainer />} />
             <Route path="/detalle/:itemId" element={<ItemDetailContainer />} />
             <Route path="/Cart/" element={<CartView />} />
-            <Route path="/checkout/:orderID" element={<Checkout/>} />
+            <Route path="/checkout/:orderid" element={<Checkout />} />
             <Route path="*" element={<h1>Error 404: Te perdiste</h1>} />
           </Routes>
           <FlexWrapper></FlexWrapper>

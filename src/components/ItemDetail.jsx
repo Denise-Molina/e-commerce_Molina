@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { cartContext } from "./cartContext";
 
 const ItemDetail = ({ id, title, price, img, detail }) => {
-
   const [estadoCart, setEstadoCart] = useState();
   const { addItem } = useContext(cartContext);
 
@@ -34,7 +33,7 @@ const ItemDetail = ({ id, title, price, img, detail }) => {
       </div>
       <div>
         <Link to="/">
-          <Button>Seguir comprando</Button>
+          <button className="btn_seguir">Seguir comprando</button>
         </Link>
       </div>
     </div>

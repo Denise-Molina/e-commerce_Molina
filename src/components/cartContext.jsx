@@ -29,12 +29,10 @@ export default function CartContextProvider({ children }) {
     return total;
   };
 
-  //Elimina un item especifico del cart
   const removeItem = (id) => {
     return setCart(cart.filter((item) => item.id !== id));
   };
 
-  //Elimina todos los items del cart
   const emptyCart = () => {
     return setCart([]);
   };

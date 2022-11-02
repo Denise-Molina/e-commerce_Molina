@@ -10,7 +10,7 @@ function NavBar() {
     <Navbar bg="light" variant="light">
       <Container>
         <img src={logoweb} className="header_logo" alt="logo" />
-        <Navbar.Brand href="#Inicio">Sasha Pasteles</Navbar.Brand>
+        <h5 className="enlace">Sasha Pasteles</h5>
         <Nav className="me-auto">
           <Link className="enlace" to="/">
             Todos los productos

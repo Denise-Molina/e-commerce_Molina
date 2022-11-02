@@ -21,10 +21,8 @@ function Item(props) {
           Ver detalle del producto
         </Button>
       </Link>
-
     </div>
   );
 }
 
 export default Item;
-
