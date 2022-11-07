@@ -15,7 +15,7 @@ Este es un proyecto que realice en el curso de React en Coderhouse. Lo que podra
 • Itegración con Firestpre / Firebase de Google.	
 
 
-## Tecnologías utilizadas 
+## Tecnologías utilizadas 🛠️
 
 •	HTML 
 
@@ -31,7 +31,7 @@ Este es un proyecto que realice en el curso de React en Coderhouse. Lo que podra
  
  Utilice hooks de react para la funcionalidad (useState, useParams, useEffect, ReactRouter) y librerias externas como bootstrap. 
  
- ## Comenzando 
+ ## Comenzando 🚀
  
  Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas
 Mira Deployment para conocer como desplegar el proyecto. 
@@ -42,7 +42,7 @@ Descargue o clone el repositorio en su pc
 
 https://github.com/Denise-Molina/e-commerce_Molina.git 
 
-### Instalación 
+### Instalación 🔧
 
 #### En el directorio del proyecto:
 
@@ -55,7 +55,7 @@ Ejecutar en el siguiente orden
 Ejecuta la aplicación en el modo de desarrollo. Abra http://localhost:3000 para verlo en su navegador.
 Nota: La página se volverá a cargar cuando realice cambios. También puede ver errores en la consola.
 
-### Información
+### Información 📖
 
 Puede obtener más información en la documentación de Create React App.
 
